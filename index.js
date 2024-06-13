@@ -46,9 +46,9 @@ const displayTodos = (data = []) => {
             <td>${new Date(todo.dueDate).toLocaleString()}</td>
             <td>${todo.completed ? 'Completed' : 'Pending'}</td>
             <td>
-                <button onclick="toggleCompleted(${index})">Mark as done</button>
-                <button onclick="deleteTodo(${index})">Delete</button>
-                <button onclick="editTodo(${index})">Edit</button>
+                <button onclick="toggleCompleted(${index})"><i class="fa-solid fa-square-check" style="color: #17d214;"></i></button>
+                <button onclick="deleteTodo(${index})"><i class="fa-solid fa-trash"></i></button>
+                <button onclick="editTodo(${index})"><i class="fa-regular fa-pen-to-square" style="color: #74C0FC;"></i></button>
             </td>
         `;
 
