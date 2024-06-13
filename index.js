@@ -46,9 +46,10 @@ const displayTodos = (data = []) => {
             <td>${new Date(todo.dueDate).toLocaleString()}</td>
             <td>${todo.completed ? 'Completed' : 'Pending'}</td>
             <td>
+            <button onclick="editTodo(${index})"><i class="fa-regular fa-pen-to-square" style="color: #74C0FC;"></i></button>
                 <button onclick="toggleCompleted(${index})"><i class="fa-solid fa-square-check" style="color: #17d214;"></i></button>
                 <button onclick="deleteTodo(${index})"><i class="fa-solid fa-trash"></i></button>
-                <button onclick="editTodo(${index})"><i class="fa-regular fa-pen-to-square" style="color: #74C0FC;"></i></button>
+                
             </td>
         `;
 
@@ -62,7 +63,7 @@ const editTodo = (index) => {
     deleteTodo(index);
 }
 
-const filterTodos = (status) => {
+const filterTodos = (status,date) => {
     let filteredTodos = [];
     if(status === 'all') {
         filteredTodos = todos;
@@ -81,6 +82,8 @@ const toggleCompleted = (index) => {
     todos[index].completed = !todos[index].completed;
     displayTodos();
 };
+
+
 
 const deleteTodo = (index) => {
     todos.splice(index, 1);
